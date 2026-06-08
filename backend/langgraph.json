@@ -1,0 +1,11 @@
+{
+  "graphs": {
+    "table_gpt": "app.langgraph_config.graph.graph_builder:Table_GPT"
+  },
+  "dependencies": [
+    "langchain",
+    "langchain-openai",
+    "langgraph",
+    "python-dotenv"
+  ]
+}

@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+*.pyc
+*.pyo
+*.pyd
+*.pckl
+.pkcl
+
+
+## Virtual environment
+.venv
+.env
+*.log
+.csv
+*.csv
+
+
+### Files generated during code execution in the sandbox executor node.
+execution_output.txt
+execution_error.txt
+generated_analysis.py
+embed_metadata.json
+session_lifecycle.json
+dataset_source.json
+.vscode/launch.json
