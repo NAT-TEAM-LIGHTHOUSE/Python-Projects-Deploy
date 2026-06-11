@@ -1,30 +1,24 @@
-# Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
-*.pyc
-*.pyo
-*.pyd
-*.pckl
-.pkcl
-
-
-## Virtual environment
-.venv
-.env
+# Logs
+logs
 *.log
-.csv
-*.csv
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
+node_modules
+dist
+dist-ssr
+*.local
 
-### Files generated during code execution in the sandbox executor node.
-execution_output.txt
-execution_error.txt
-generated_analysis.py
-embed_metadata.json
-session_lifecycle.json
-dataset_source.json
-.vscode/launch.json
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

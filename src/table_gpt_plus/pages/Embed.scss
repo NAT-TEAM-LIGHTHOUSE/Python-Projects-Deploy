@@ -1,0 +1,307 @@
+.embed-page {
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: transparent;
+}
+
+.embed-page__session-timeout {
+  display: contents;
+}
+
+.embed-page__main {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  padding: 0;
+}
+
+.embed-page__shell {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.embed-page__panel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+  border-radius: 28px;
+  background: hsl(var(--card));
+  box-shadow: var(--shadow-elevated);
+}
+
+.embed-page__header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  height: 50px;
+  border-bottom: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  padding: 0.75rem 0.75rem;
+}
+
+.embed-page__header-row {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.embed-page__brand {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.embed-page__brand-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  filter: invert(17%) sepia(94%) saturate(6579%) hue-rotate(290deg) brightness(89%) contrast(122%);
+}
+
+.embed-page__header-actions {
+  height: 100%;
+  text-align: right;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.embed-page__header-actions-row {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  flex-wrap: nowrap;
+}
+
+.embed-page__header-select {
+  width: 220px;
+  min-width: 0;
+}
+
+/* Gradient border for select trigger and force non-muted text */
+.embed-page__header-select {
+  border: 2px solid transparent !important;
+  border-radius: 999px;
+  -webkit-border-radius: 999px;
+  /* Force gradient border using border-image (reliable across browsers) */
+  border-image-source: linear-gradient(45deg, #7C3AED, #EC4899) !important;
+  border-image-slice: 1 !important;
+  border-image-width: 1 !important;
+  /* Keep the interior background matching the card */
+  background-color: hsl(var(--card));
+  background-clip: padding-box;
+  box-sizing: border-box;
+  color: hsl(var(--foreground));
+}
+
+/* Ensure the internal trigger text/icon inherit the foreground color */
+.embed-page__header-select,
+.embed-page__header-select * {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Remove Radix/utility focus ring so the gradient border remains visible */
+.embed-page__header-select:focus,
+.embed-page__header-select:focus-visible,
+.embed-page__header-select:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure when the trigger is focused/expanded the gradient border stays */
+.embed-page__header-select[aria-expanded="true"] {
+  border-image-source: linear-gradient(45deg, #7C3AED, #EC4899) !important;
+}
+
+.embed-page__header-button {
+  width: 37px;
+  height: 30px;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.embed-page__header-button:hover {
+  color: hsl(var(--foreground));
+}
+
+.embed-page__header-button--danger:hover {
+  color: hsl(var(--destructive));
+}
+
+.embed-page__header-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+}
+
+.embed-page__history-sheet {
+  padding: 0;
+}
+
+.embed-page__history-panel {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.embed-page__history-header {
+  border-bottom: 1px solid hsl(var(--border));
+  padding: 1rem;
+}
+
+.embed-page__history-refresh {
+  padding-top: 0.5rem;
+}
+
+.embed-page__history-scroll {
+  flex: 1 1 auto;
+  padding: 0.75rem 1rem;
+}
+
+.embed-page__history-empty,
+.embed-page__history-loading,
+.embed-page__history-error {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.embed-page__history-loading,
+.embed-page__history-empty {
+  color: hsl(var(--muted-foreground));
+}
+
+.embed-page__history-error {
+  color: hsl(var(--destructive));
+}
+
+.embed-page__history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.embed-page__history-item {
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.375rem;
+  background: hsl(var(--background));
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+}
+
+.embed-page__body {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.embed-bot-picker {
+  display: flex;
+  width: 100%;
+  min-height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  background: hsl(var(--background));
+  padding: 1rem;
+}
+
+.embed-bot-picker__panel {
+  width: min(100%, 420px);
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  background: hsl(var(--card));
+  padding: 1.25rem;
+  box-shadow: var(--shadow-elevated);
+}
+
+.embed-bot-picker__badge {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+}
+
+.embed-bot-picker__title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+}
+
+.embed-bot-picker__control {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.embed-bot-picker__select {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.embed-bot-picker__button {
+  flex: 0 0 auto;
+}
+
+.embed-bot-picker__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.embed-bot-picker__meta span {
+  border: 1px solid hsl(var(--border));
+  border-radius: 999px;
+  padding: 0.125rem 0.5rem;
+}
+
+.embed-bot-picker__error,
+.embed-bot-picker__empty {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.embed-bot-picker__error {
+  color: hsl(var(--destructive));
+}
+
+.embed-bot-picker__empty {
+  color: hsl(var(--muted-foreground));
+}
+
+@media (max-width: 480px) {
+  .embed-bot-picker__control {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 640px) {
+  .embed-page__header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .embed-page__header {
+    padding: 1rem 1.25rem;
+  }
+}
